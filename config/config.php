@@ -24,6 +24,15 @@ $GLOBALS['TL_CTE']['euf_grid'] = array(
 
 
 /**
+ * Front end wrappers
+ */
+$GLOBALS['TL_WRAPPERS']['start'][] = 'rowStart';
+$GLOBALS['TL_WRAPPERS']['stop'][] = 'rowEnd';
+$GLOBALS['TL_WRAPPERS']['start'][] = 'colStart';
+$GLOBALS['TL_WRAPPERS']['stop'][] = 'colEnd';
+
+
+/**
  * EuF Grid HOOKS
  */
 $GLOBALS['TL_HOOKS']['getContentElement'][] = array('GridHooks', 'addGridClasses');
