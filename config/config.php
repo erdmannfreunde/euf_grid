@@ -22,6 +22,11 @@ $GLOBALS['TL_CTE']['euf_grid'] = array(
 	'colEnd'		=> 'ContentColEnd',
 );
 
+$GLOBALS['TL_FFL']['rowStart'] = 'FormRowStart';
+$GLOBALS['TL_FFL']['rowEnd']  = 'FormRowEnd';
+$GLOBALS['TL_FFL']['colStart'] = 'FormColStart';
+$GLOBALS['TL_FFL']['colEnd']  = 'FormColEnd';
+
 
 /**
  * Front end wrappers

@@ -25,7 +25,7 @@
   "replace": {
     "contao-legacy/euf_grid": "self.version"
   },
-	"extra": {
+  "extra": {
     "contao": {
       "sources": {
         "": "system/modules/euf_grid"
