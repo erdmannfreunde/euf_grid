@@ -17,10 +17,14 @@ $GLOBALS['TL_DCA']['tl_form_field']['palettes']['rowEnd'] = '{type_legend},type'
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['colStart'] = '{type_legend},type;{grid_legend},grid_columns,grid_options;{expert_legend:hide},class';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['colEnd'] = '{type_legend},type';
 
+
+
+// Elementtypen, die nicht die Grid-Felder erhalten sollen
+$arrWrongFields = array('html', 'fieldsetfsStop', 'rowStart');
+
 // Vorhandene Paletten ersetzen
 foreach ($GLOBALS['TL_DCA']['tl_form_field']['palettes'] as $k => $palette) {
-
-  if (!is_array($palette) && strpos($palette, "customTpl")!==false) {
+  if (!is_array($palette) && strpos($palette, "customTpl")!==false && (!in_array($k, $arrWrongFields))) {
 
     $GLOBALS['TL_DCA']['tl_form_field']['palettes'][$k] = str_replace (
       '{template_legend:hide}',

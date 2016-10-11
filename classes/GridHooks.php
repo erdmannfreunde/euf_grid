@@ -65,10 +65,10 @@ class GridHooks extends \Controller {
     $strClasses = "";
 
     // Bei diesen ContentElementen soll nichts verändert werden
-    $arrWrongCE = array('rowStart', 'rowEnd', 'colEnd');
+    $arrWrongFields = array('rowStart', 'rowEnd', 'colEnd', 'html', 'fieldsetfsStop');
 
     // Abfrage, ob anzupassenden CEs und Klassen gesetzt wurden
-    if (!in_array($objWidget->type, $arrWrongCE) && (isset($objWidget->grid_columns) || isset($objWidget->grid_options))) {
+    if (!in_array($objWidget->type, $arrWrongFields) && (isset($objWidget->grid_columns) || isset($objWidget->grid_options))) {
 
       if($objWidget->grid_columns) {
         $arrGridClasses = unserialize($objWidget->grid_columns);
@@ -90,7 +90,7 @@ class GridHooks extends \Controller {
         $objWidget->class .= $strClasses;
       }
       else {
-        $objWidget->prefix .= " ".$strClasses;        
+        $objWidget->prefix .= " ".$strClasses;
       }
 
     }
