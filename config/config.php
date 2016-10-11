@@ -37,6 +37,7 @@ $GLOBALS['TL_WRAPPERS']['stop'][] = 'colEnd';
  * EuF Grid HOOKS
  */
 $GLOBALS['TL_HOOKS']['getContentElement'][] = array('GridHooks', 'addGridClasses');
+$GLOBALS['TL_HOOKS']['loadFormField'][] = array('GridHooks', 'addGridClassesToForms');
 
 
 /**

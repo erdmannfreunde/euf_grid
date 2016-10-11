@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @package   EuF-Grid
- * @author    Sebastian Buck
- * @license   LGPL
- * @copyright Erdmann & Freunde
- */
+* @package   EuF-Grid
+* @author    Sebastian Buck
+* @license   LGPL
+* @copyright Erdmann & Freunde
+*/
 
 class GridHooks extends \Controller {
 
@@ -57,4 +57,41 @@ class GridHooks extends \Controller {
     // Rückgabe
     return $strBuffer;
   }
+
+  // Grid-Klassen dem CE hinzufügen
+  public function addGridClassesToForms($objWidget, $strForm, $arrForm)
+  {
+    // Init
+    $strClasses = "";
+
+    // Bei diesen ContentElementen soll nichts verändert werden
+    $arrWrongCE = array('rowStart', 'rowEnd', 'colEnd');
+
+    // Abfrage, ob anzupassenden CEs und Klassen gesetzt wurden
+    if (!in_array($objWidget->type, $arrWrongCE) && (isset($objWidget->grid_columns) || isset($objWidget->grid_options))) {
+
+      if($objWidget->grid_columns) {
+        $arrGridClasses = unserialize($objWidget->grid_columns);
+        foreach ($arrGridClasses as $class) {
+          $strClasses .= $class." ";
+        }
+      }
+
+      // Weitere Optionen Klassen auslesen und in String speichern
+      if($objWidget->grid_options) {
+        $arrGridClasses = unserialize($objWidget->grid_options);
+        foreach ($arrGridClasses as $class) {
+          $strClasses .= $class." ";
+        }
+      }
+
+      // Klassen anfügen
+      $objWidget->prefix .= " ".$strClasses;
+
+    }
+
+    return $objWidget;
+
+  }
+
 }
