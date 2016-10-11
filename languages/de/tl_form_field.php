@@ -1,10 +1,6 @@
 <?php
 
 /**
- * Contao Open Source CMS
- *
- * Copyright (c) 2005-2016 Leo Feyer
- *
  * @package   EuF-Grid
  * @author    Sebastian Buck
  * @license   LGPL
@@ -28,4 +24,3 @@ $GLOBALS['TL_LANG']['tl_form_field']['grid_options'] = array('Grid Optionen','Be
  * Options
  */
 $GLOBALS['TL_LANG']['tl_form_field']['grid_further_options'] = 'Weitere Klassen';
-

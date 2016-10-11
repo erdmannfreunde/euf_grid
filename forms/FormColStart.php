@@ -1,10 +1,6 @@
 <?php
 
 /**
- * Contao Open Source CMS
- *
- * Copyright (c) 2005-2016 Leo Feyer
- *
  * @package   EuF-Grid
  * @author    Sebastian Buck
  * @license   LGPL
@@ -42,7 +38,7 @@ class FormColStart extends Widget
 	 */
 	public function parse($arrAttributes=null)
 	{
-  	
+
 		// Return a wildcard in the back end
 		if (TL_MODE == 'BE')
 		{
@@ -52,7 +48,7 @@ class FormColStart extends Widget
 			$objTemplate->wildcard = '### ' . $GLOBALS['TL_LANG']['FFL']['colStart'][0] . ' ###';
 
 			return $objTemplate->parse();
-			
+
 		}
 
 		return parent::parse($arrAttributes);
