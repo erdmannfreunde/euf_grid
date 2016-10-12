@@ -15,20 +15,21 @@
 ClassLoader::addClasses(array
 (
 	// Classes
-	'GridClass'       => 'system/modules/euf_grid/classes/GridClass.php',
-	'GridHooks'       => 'system/modules/euf_grid/classes/GridHooks.php',
+	'GridClass'           => 'system/modules/euf_grid/classes/GridClass.php',
+	'GridHooks'           => 'system/modules/euf_grid/classes/GridHooks.php',
+	'tl_content_extended' => 'system/modules/euf_grid/classes/tl_content_extended.php',
 
 	// Elements
-	'ContentColEnd'   => 'system/modules/euf_grid/elements/ContentColEnd.php',
-	'ContentColStart' => 'system/modules/euf_grid/elements/ContentColStart.php',
-	'ContentRowEnd'   => 'system/modules/euf_grid/elements/ContentRowEnd.php',
-	'ContentRowStart' => 'system/modules/euf_grid/elements/ContentRowStart.php',
+	'ContentColEnd'       => 'system/modules/euf_grid/elements/ContentColEnd.php',
+	'ContentColStart'     => 'system/modules/euf_grid/elements/ContentColStart.php',
+	'ContentRowEnd'       => 'system/modules/euf_grid/elements/ContentRowEnd.php',
+	'ContentRowStart'     => 'system/modules/euf_grid/elements/ContentRowStart.php',
 
 	// Forms
-	'FormColEnd'      => 'system/modules/euf_grid/forms/FormColEnd.php',
-	'FormColStart'    => 'system/modules/euf_grid/forms/FormColStart.php',
-	'FormRowEnd'      => 'system/modules/euf_grid/forms/FormRowEnd.php',
-	'FormRowStart'    => 'system/modules/euf_grid/forms/FormRowStart.php',
+	'FormColEnd'          => 'system/modules/euf_grid/forms/FormColEnd.php',
+	'FormColStart'        => 'system/modules/euf_grid/forms/FormColStart.php',
+	'FormRowEnd'          => 'system/modules/euf_grid/forms/FormRowEnd.php',
+	'FormRowStart'        => 'system/modules/euf_grid/forms/FormRowStart.php',
 ));
 
 
