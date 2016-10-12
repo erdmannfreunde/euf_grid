@@ -87,7 +87,7 @@ class GridHooks extends \Controller {
 
       // Klassen anfügen
       if ($objWidget->type === 'fieldset') {
-        $objWidget->class .= $strClasses;
+        $objWidget->class = $strClasses;
       }
       else {
         $objWidget->prefix .= " ".$strClasses;
