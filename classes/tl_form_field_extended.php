@@ -11,13 +11,13 @@
  * Label_Callback anpassen, um Grid-KLassen hinzuzufügen
  */
 
-class tl_content_extended extends tl_content
+class tl_form_field_extended extends tl_form_field
 {
 
-  public function addCteType($arrRow)
+  public function listFormFields($arrRow)
   {
 
-    $return = parent::addCteType($arrRow);
+    $return = parent::listFormFields($arrRow);
 
     $return = GridClass::addClassesToLabels($arrRow, $return);
 

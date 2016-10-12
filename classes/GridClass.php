@@ -9,7 +9,9 @@
 
 class GridClass {
 
-  // Optionen für Select-Feld 'Grid-Spalten' aus config laden und zusammenbauen
+  /**
+   * Optionen für Select-Feld 'Grid-Spalten' aus config laden und zusammenbauen
+   */
   public function getGridCols() {
 
     $arrColumns = array();
@@ -28,7 +30,9 @@ class GridClass {
     return $arrColumns;
   }
 
-  // Optionen für Select-Feld 'Grid-Optionen' aus config laden und zusammenbauen
+  /**
+   * Optionen für Select-Feld 'Grid-Optionen' aus config laden und zusammenbauen
+   */
   public function getGridOptions() {
 
     $arrOptions = array();
@@ -61,5 +65,43 @@ class GridClass {
     }
 
     return $arrOptions;
+  }
+
+
+  /**
+   * Funktion zum Anzeigen der Grid-Klassen in der Übersicht im BE
+   */
+  public function addClassesToLabels($arrRow, $return) {
+    // Grid-Klassen dem Typ hinzufügen
+    $grid = "(";
+
+    if($arrRow['grid_columns'] != "" ) {
+      $arrGridClasses = deserialize($arrRow['grid_columns']);
+      $grid .= implode(deserialize($arrGridClasses), ", ");
+
+      if($arrRow['grid_options'] != "" ) {
+        $grid .= ", ";
+      }
+    }
+
+    if($arrRow['grid_options'] != "" ) {
+      $arrGridClasses = deserialize($arrRow['grid_options']);
+      $grid .= implode(deserialize($arrGridClasses), ", ");
+    }
+
+    $grid .= ")";
+
+    if($arrRow['grid_columns'] == "" && $arrRow['grid_options'] == "") {
+      $grid = "";
+    }
+
+    // Klasse hinzufügen, wenn $grid gesetzt
+    if($grid!=="") {
+      $type .= " <span class='tl_gray'>".$grid."</span>";
+
+      $return = str_replace('<div class="cte_type', '<div class="tl_gray tl_content_right">'.$grid.'</div><div class="cte_type', $return);
+    }
+
+    return $return;
   }
 }
