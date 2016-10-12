@@ -1,0 +1,2 @@
+
+<div class="row <?php echo $this->class ?>">

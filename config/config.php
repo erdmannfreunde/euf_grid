@@ -1,10 +1,6 @@
 <?php
 
 /**
- * Contao Open Source CMS
- *
- * Copyright (c) 2005-2016 Leo Feyer
- *
  * @package   EuF-Grid
  * @author    Sebastian Buck
  * @license   LGPL
@@ -22,6 +18,11 @@ $GLOBALS['TL_CTE']['euf_grid'] = array(
 	'colEnd'		=> 'ContentColEnd',
 );
 
+$GLOBALS['TL_FFL']['rowStart'] = 'FormRowStart';
+$GLOBALS['TL_FFL']['rowEnd']  = 'FormRowEnd';
+$GLOBALS['TL_FFL']['colStart'] = 'FormColStart';
+$GLOBALS['TL_FFL']['colEnd']  = 'FormColEnd';
+
 
 /**
  * Front end wrappers
@@ -36,6 +37,7 @@ $GLOBALS['TL_WRAPPERS']['stop'][] = 'colEnd';
  * EuF Grid HOOKS
  */
 $GLOBALS['TL_HOOKS']['getContentElement'][] = array('GridHooks', 'addGridClasses');
+$GLOBALS['TL_HOOKS']['loadFormField'][] = array('GridHooks', 'addGridClassesToForms');
 
 
 /**
