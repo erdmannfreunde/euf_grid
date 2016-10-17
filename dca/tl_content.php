@@ -9,6 +9,12 @@
 
 
 /*
+ * Label anpassen
+ */
+ $GLOBALS['TL_DCA']['tl_content']['list']['sorting']['child_record_callback'] = array('tl_content_extended', 'addCteType');
+
+
+/*
  * Palettes
  */
 $GLOBALS['TL_DCA']['tl_content']['palettes']['rowStart'] = '{type_legend},type;{expert_legend:hide},cssID,space';
