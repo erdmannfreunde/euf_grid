@@ -48,6 +48,7 @@ $GLOBALS['EUF_GRID_SETTING'] = array (
   'viewports' => array ('xs','sm','md','lg','xl'),
 	'devider'		=> '-',
 
+	'row'       => 'row',
 	'cols' 			=> array ('col'),
 	'offset' 		=> array ('offset'),
 	'pulls'			=> array ('pull-left', 'pull-right'),
