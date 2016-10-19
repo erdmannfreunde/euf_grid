@@ -39,9 +39,12 @@ class GridClass {
 
     // Offset
     if($GLOBALS['EUF_GRID_SETTING']['offset']) {
+      //add zero to columns
+      $GLOBALS['EUF_GRID_SETTING']['columns_zero'] = array_merge(array('0'), $GLOBALS['EUF_GRID_SETTING']['columns']);
+    
       foreach($GLOBALS['EUF_GRID_SETTING']['offset'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
-      		foreach($GLOBALS['EUF_GRID_SETTING']['columns'] as $column) {
+      		foreach($GLOBALS['EUF_GRID_SETTING']['columns_zero'] as $column) {
       			$arrOptions[$option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport.$GLOBALS['EUF_GRID_SETTING']['devider'].$column;
       		}
       	}
