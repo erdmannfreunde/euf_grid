@@ -99,7 +99,7 @@ class GridClass {
     if($grid!=="") {
       $type .= " <span class='tl_gray'>".$grid."</span>";
 
-      $return = str_replace('<div class="cte_type', '<div class="tl_gray tl_content_right">'.$grid.'</div><div class="cte_type', $return);
+      $return .= '<div class="tl_gray tl_content_right">'.$grid.'</div>';
     }
 
     return $return;
