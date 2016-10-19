@@ -51,5 +51,6 @@ $GLOBALS['EUF_GRID_SETTING'] = array (
 	'cols' 			=> array ('col'),
 	'offset' 		=> array ('offset'),
 	'pulls'			=> array ('pull-left', 'pull-right'),
+	'resets'     => array ('clear'),
   'options'   => array ('') // additional custom classes
 );

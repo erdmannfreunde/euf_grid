@@ -59,6 +59,15 @@ class GridClass {
       	}
       }
     }
+    
+    // Resets
+    if($GLOBALS['EUF_GRID_SETTING']['resets']) {
+      foreach($GLOBALS['EUF_GRID_SETTING']['resets'] as $option) {
+      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
+      			$arrOptions[$option][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport;
+      	}
+      }
+    }
 
     // further Options
     if($GLOBALS['EUF_GRID_SETTING']['options']) {
