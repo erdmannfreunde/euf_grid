@@ -7,7 +7,7 @@
  * @copyright Erdmann & Freunde
  */
 
-class GridClass {
+class GridClass extends Backend {
 
   /**
    * Optionen für Select-Feld 'Grid-Spalten' aus config laden und zusammenbauen
@@ -76,7 +76,26 @@ class GridClass {
     $grid = "(";
 
     if($arrRow['grid_columns'] != "" ) {
+      $strField = "grid_columns";
+      $env = "BE";
       $arrGridClasses = deserialize($arrRow['grid_columns']);
+
+      // HOOK: create and manipulate grid classes
+      if (isset($GLOBALS['TL_HOOKS']['manipulateGridClasses']) && is_array($GLOBALS['TL_HOOKS']['manipulateGridClasses']))
+      {
+        foreach ($GLOBALS['TL_HOOKS']['manipulateGridClasses'] as $callback)
+        {
+          $this->import($callback[0]);
+          $arrGridClassesManipulated = array();
+
+          foreach ($arrGridClasses as $class) {
+            $arrGridClassesManipulated[] = $this->{$callback[0]}->{$callback[1]}($env, $strField, $class);
+          }
+
+          $arrGridClasses = $arrGridClassesManipulated;
+        }
+      }
+
       $grid .= implode(deserialize($arrGridClasses), ", ");
 
       if($arrRow['grid_options'] != "" ) {
@@ -85,7 +104,26 @@ class GridClass {
     }
 
     if($arrRow['grid_options'] != "" ) {
+      $env = "BE";
+      $strField = "grid_options";
       $arrGridClasses = deserialize($arrRow['grid_options']);
+
+      // HOOK: create and manipulate grid classes
+      if (isset($GLOBALS['TL_HOOKS']['manipulateGridClasses']) && is_array($GLOBALS['TL_HOOKS']['manipulateGridClasses']))
+      {
+        foreach ($GLOBALS['TL_HOOKS']['manipulateGridClasses'] as $callback)
+        {
+          $this->import($callback[0]);
+          $arrGridClassesManipulated = array();
+
+          foreach ($arrGridClasses as $class) {
+            $arrGridClassesManipulated[] = $this->{$callback[0]}->{$callback[1]}($env, $strField, $class);
+          }
+
+          $arrGridClasses = $arrGridClassesManipulated;
+        }
+      }
+
       $grid .= implode(deserialize($arrGridClasses), ", ");
     }
 
