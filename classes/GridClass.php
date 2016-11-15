@@ -71,7 +71,7 @@ class GridClass {
   /**
    * Funktion zum Anzeigen der Grid-Klassen in der Übersicht im BE
    */
-  public function addClassesToLabels($arrRow, $return) {
+  public static function addClassesToLabels($arrRow, $return) {
     // Grid-Klassen dem Typ hinzufügen
     $grid = "(";
 
