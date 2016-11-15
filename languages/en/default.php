@@ -18,3 +18,11 @@ $GLOBALS['TL_LANG']['CTE']['rowEnd'] = array('Row End', '');
 
 $GLOBALS['TL_LANG']['CTE']['colStart'] = array('Column Start', '');
 $GLOBALS['TL_LANG']['CTE']['colEnd'] = array('Column End', '');
+
+/**
+ * Form fields
+ */
+$GLOBALS['TL_LANG']['FFL']['rowStart'] = array('Row Start', '');
+$GLOBALS['TL_LANG']['FFL']['rowEnd'] = array('Row End', '');
+$GLOBALS['TL_LANG']['FFL']['colStart'] = array('Column Start', '');
+$GLOBALS['TL_LANG']['FFL']['colEnd'] = array('Column End', '');
