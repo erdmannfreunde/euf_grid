@@ -38,6 +38,7 @@ $GLOBALS['TL_WRAPPERS']['stop'][] = 'colEnd';
  */
 $GLOBALS['TL_HOOKS']['getContentElement'][] = array('GridHooks', 'addGridClasses');
 $GLOBALS['TL_HOOKS']['loadFormField'][] = array('GridHooks', 'addGridClassesToForms');
+$GLOBALS['TL_HOOKS']['loadDataContainer'][] = array('GridHooks', 'addCSSFileAsFramework');
 
 
 /**
