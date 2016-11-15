@@ -1,2 +1,2 @@
 
-<div class="row <?php echo $this->class ?>">
+<div class="<?php echo $GLOBALS['EUF_GRID_SETTING']['row'] ?> <?php echo $this->class ?>">

@@ -45,7 +45,8 @@ class FormRowStart extends Widget
 			/** @var \BackendTemplate|object $objTemplate */
 			$objTemplate = new \BackendTemplate('be_wildcard');
 
-			$objTemplate->wildcard = '### ' . $GLOBALS['TL_LANG']['FFL']['rowStart'][0] . ' ###';
+			$objTemplate->wildcard = '### E&F GRID: ' . $GLOBALS['TL_LANG']['FFL']['rowStart'][0] . '  ###';
+			$objTemplate->wildcard .= '<div class="tl_content_right tl_gray m12">('.$GLOBALS['EUF_GRID_SETTING']['row'].')</div>';
 
 			return $objTemplate->parse();
 			
