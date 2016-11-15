@@ -41,7 +41,7 @@ class GridClass {
     if($GLOBALS['EUF_GRID_SETTING']['offset']) {
       foreach($GLOBALS['EUF_GRID_SETTING']['offset'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
-      		foreach($GLOBALS['EUF_GRID_SETTING']['columns'] as $column) {
+      		foreach($GLOBALS['EUF_GRID_SETTING']['offset_cols'] as $column) {
       			$arrOptions[$option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport.$GLOBALS['EUF_GRID_SETTING']['devider'].$column;
       		}
       	}
@@ -51,6 +51,15 @@ class GridClass {
     // Pulls
     if($GLOBALS['EUF_GRID_SETTING']['pulls']) {
       foreach($GLOBALS['EUF_GRID_SETTING']['pulls'] as $option) {
+      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
+      			$arrOptions[$option][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport;
+      	}
+      }
+    }
+
+    // Resets
+    if($GLOBALS['EUF_GRID_SETTING']['resets']) {
+      foreach($GLOBALS['EUF_GRID_SETTING']['resets'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
       			$arrOptions[$option][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport;
       	}
