@@ -22,7 +22,8 @@ class ContentRowStart extends ContentElement
   	if (TL_MODE == 'BE')
   	{
   		$this->Template = new BackendTemplate('be_wildcard');
-  		$this->Template->wildcard = '### E&F GRID: Reihe Start ###';
+  		$this->Template->wildcard = '### E&F GRID: ' . $GLOBALS['TL_LANG']['FFL']['rowStart'][0] . '  ###';
+      $this->Template->wildcard .= '<div class="tl_content_right tl_gray m12">('.$GLOBALS['EUF_GRID_SETTING']['row'].')</div>';
   		return $this->Template->parse();
   	}
 

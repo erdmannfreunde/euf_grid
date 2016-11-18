@@ -24,5 +24,5 @@ $GLOBALS['TL_LANG']['CTE']['colEnd'] = array('Spalte Ende', '');
  */
 $GLOBALS['TL_LANG']['FFL']['rowStart'] = array('Reihe Start', 'Reihe Start');
 $GLOBALS['TL_LANG']['FFL']['rowEnd'] = array('Reihe Ende', 'Reihe Start');
-$GLOBALS['TL_LANG']['FFL']['colStart'] = array('Spalte Start', 'u');
-$GLOBALS['TL_LANG']['FFL']['colEnd'] = array('Spalte Ende', 'u');
+$GLOBALS['TL_LANG']['FFL']['colStart'] = array('Spalte Start', '');
+$GLOBALS['TL_LANG']['FFL']['colEnd'] = array('Spalte Ende', '');

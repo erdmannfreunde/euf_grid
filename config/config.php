@@ -34,10 +34,34 @@ $GLOBALS['TL_WRAPPERS']['stop'][] = 'colEnd';
 
 
 /**
- * EuF Grid HOOKS
+ * HOOKS
  */
 $GLOBALS['TL_HOOKS']['getContentElement'][] = array('GridHooks', 'addGridClasses');
 $GLOBALS['TL_HOOKS']['loadFormField'][] = array('GridHooks', 'addGridClassesToForms');
+$GLOBALS['TL_HOOKS']['loadDataContainer'][] = array('GridHooks', 'addCSSFileAsFramework');
+
+
+ /**
+  * EuF Grid HOOK: manipulateGridClasses
+	*
+	* Übergibt die derzeitige Umgebung (BE/FE), das betroffene Feld
+	* (grid_columns/grid_options) und die Klasse.
+	* Erwartet als Rückgabe die manipulierte Klasse als String
+	*
+	* ###### config.php #######
+	* $GLOBALS['TL_HOOKS']['manipulateGridClasses'][] = array('manipulateGridClasses', 'manipulateClasses');
+	*
+	* ###### manipulateGridClasses.php #######
+	* class manipulateGridClasses {
+	*
+	*	  public function manipulateClasses($env, $strField, $class) {
+	*
+	*	    // Do something here...
+	*
+	*	    return $class;
+	*	  }
+	*	}
+  */
 
 
 /**
@@ -48,8 +72,11 @@ $GLOBALS['EUF_GRID_SETTING'] = array (
   'viewports' => array ('xs','sm','md','lg','xl'),
 	'devider'		=> '-',
 
+	'row'       => 'row',
 	'cols' 			=> array ('col'),
 	'offset' 		=> array ('offset'),
+	'offset_cols'   => array ('0', '1','2','3','4','5','6','7','8','9','10','11'),
 	'pulls'			=> array ('pull-left', 'pull-right'),
+	'resets'     => array ('clear'),
   'options'   => array ('') // additional custom classes
 );
