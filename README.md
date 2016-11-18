@@ -8,4 +8,4 @@ Wir empfehlen dir, die Erweiterung in Verbindung mit unserem Contao Theme SOLO z
 
 Nach der Installation werden den Content-Elementen 2 neue Felder für die Eingabe von Grid-Klassen und weiteren Optionen hinzugefügt. Außerdem stehen weitere Content-Elemente zur Verschachtelung in Reihen und Spalten zur Verfügung.
 
-**Wichtig**: Die Erweiterung bringt keine eigenen CSS-Grid-Anweisungen mit, sondern verwendet die im Theme hinterlegten Grid-Klassen.
+**Neu in 2.0**: Die Erweiterung bringt nun Standard CSS-Grid-Anweisungen mit, die im Seitenlayout aktiviert werden können.
