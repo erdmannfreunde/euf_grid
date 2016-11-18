@@ -22,17 +22,43 @@ class GridHooks extends \Controller {
     if (!in_array($objElement->type, $arrWrongCE) && (isset($objElement->grid_columns) || isset($objElement->grid_options))) {
       // Columns Klassen auslesen und in String speichern
       if($objElement->grid_columns) {
+        $env = "FE";
+        $strField = "grid_columns";
         $arrGridClasses = unserialize($objElement->grid_columns);
         foreach ($arrGridClasses as $class) {
-           $strClasses .= $class." ";
+
+          // HOOK: create and manipulate grid classes
+      		if (isset($GLOBALS['TL_HOOKS']['manipulateGridClasses']) && is_array($GLOBALS['TL_HOOKS']['manipulateGridClasses']))
+      		{
+      			foreach ($GLOBALS['TL_HOOKS']['manipulateGridClasses'] as $callback)
+      			{
+      				$this->import($callback[0]);
+      				$class = $this->{$callback[0]}->{$callback[1]}($env, $strField, $class);
+      			}
+      		}
+
+          $strClasses .= $class." ";
         }
       }
 
       // Weitere Optionen Klassen auslesen und in String speichern
       if($objElement->grid_options) {
+        $env = "FE";
+        $strField = "grid_options";
         $arrGridClasses = unserialize($objElement->grid_options);
         foreach ($arrGridClasses as $class) {
-           $strClasses .= $class." ";
+
+          // HOOK: create and manipulate grid classes
+      		if (isset($GLOBALS['TL_HOOKS']['manipulateGridClasses']) && is_array($GLOBALS['TL_HOOKS']['manipulateGridClasses']))
+      		{
+      			foreach ($GLOBALS['TL_HOOKS']['manipulateGridClasses'] as $callback)
+      			{
+      				$this->import($callback[0]);
+      				$class = $this->{$callback[0]}->{$callback[1]}($env, $strField, $class);
+      			}
+      		}
+
+          $strClasses .= $class." ";
         }
       }
 
@@ -71,16 +97,42 @@ class GridHooks extends \Controller {
     if (!in_array($objWidget->type, $arrWrongFields) && (isset($objWidget->grid_columns) || isset($objWidget->grid_options))) {
 
       if($objWidget->grid_columns) {
+        $env = "FE";
+        $strField = "grid_columns";
         $arrGridClasses = unserialize($objWidget->grid_columns);
         foreach ($arrGridClasses as $class) {
+
+          // HOOK: create and manipulate grid classes
+      		if (isset($GLOBALS['TL_HOOKS']['manipulateGridClasses']) && is_array($GLOBALS['TL_HOOKS']['manipulateGridClasses']))
+      		{
+      			foreach ($GLOBALS['TL_HOOKS']['manipulateGridClasses'] as $callback)
+      			{
+      				$this->import($callback[0]);
+      				$class = $this->{$callback[0]}->{$callback[1]}($env, $strField, $class);
+      			}
+      		}
+
           $strClasses .= $class." ";
         }
       }
 
       // Weitere Optionen Klassen auslesen und in String speichern
       if($objWidget->grid_options) {
+        $env = "FE";
+        $strField = "grid_options";
         $arrGridClasses = unserialize($objWidget->grid_options);
         foreach ($arrGridClasses as $class) {
+
+          // HOOK: create and manipulate grid classes
+      		if (isset($GLOBALS['TL_HOOKS']['manipulateGridClasses']) && is_array($GLOBALS['TL_HOOKS']['manipulateGridClasses']))
+      		{
+      			foreach ($GLOBALS['TL_HOOKS']['manipulateGridClasses'] as $callback)
+      			{
+      				$this->import($callback[0]);
+      				$class = $this->{$callback[0]}->{$callback[1]}($env, $strField, $class);
+      			}
+      		}
+
           $strClasses .= $class." ";
         }
       }
