@@ -1,5 +1,5 @@
 {
-  "name": "etgwebkit/euf_grid",
+  "name": "erdmannfreunde/euf_grid",
   "description": "Contao Extension to create grid-layouts",
   "keywords": ["contao", "grid", "bootstrap", "euf grid"],
   "type": "contao-module",
