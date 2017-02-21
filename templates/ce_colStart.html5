@@ -1,1 +1,1 @@
-<div class="ce_columns <?php echo $this->class ?>">
+<div <?= $this->cssID ?> class="ce_columns <?php echo $this->class ?>">

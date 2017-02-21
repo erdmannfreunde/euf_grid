@@ -1,6 +1,16 @@
 euf_grid Changelog
 ==================
 
+Version 2.0.1 (2017-02-21)
+--------------------------
+
+### Fixed
+- output element IDs in frontend
+
+### Removed
+- removed space fields from content elements
+
+
 Version 2.0.0 (2016-11-19)
 --------------------------
 

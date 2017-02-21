@@ -17,10 +17,10 @@
 /*
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['rowStart'] = '{type_legend},type;{expert_legend:hide},cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['rowStart'] = '{type_legend},type;{expert_legend:hide},cssID';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['rowEnd'] = '{type_legend},type';
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['colStart'] = '{type_legend},type;{grid_legend},grid_columns,grid_options;{expert_legend:hide},cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['colStart'] = '{type_legend},type;{grid_legend},grid_columns,grid_options;{expert_legend:hide},cssID';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['colEnd'] = '{type_legend},type';
 
 // Vorhandene Paletten ersetzen
