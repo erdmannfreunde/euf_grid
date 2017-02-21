@@ -1,6 +1,14 @@
 euf_grid Changelog
 ==================
 
+
+Version 2.0.2 (2017-02-21)
+--------------------------
+
+### New
+- supports contao 4 (https://packagist.org/packages/erdmannfreunde/euf_grid)
+
+
 Version 2.0.1 (2017-02-21)
 --------------------------
 
