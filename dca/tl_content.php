@@ -55,7 +55,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns'] = array
       'mandatory'       => false,
       'multiple'        => true,
       'size'            => 10,
-      'tl_class'        => 'w50 w50h',
+      'tl_class'        => 'w50 w50h autoheight',
       'chosen'          => true
     ),
 	'sql'              => "text NULL",
@@ -74,7 +74,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['grid_options'] = array
       'mandatory'       => false,
       'multiple'        => true,
       'size'            => 10,
-      'tl_class'        => 'w50 w50h',
+      'tl_class'        => 'w50 w50h autoheight',
       'chosen'          => true
     ),
 	'sql'              => "text NULL",
