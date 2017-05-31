@@ -2,6 +2,16 @@ euf_grid Changelog
 ==================
 
 
+Version 2.0.3 (2017-05-31)
+--------------------------
+
+### Fixed
+- adjust field height in BE to be dynamic so it can display many classes
+
+### Improved
+- also show additional classes for RowStart elements
+
+
 Version 2.0.2 (2017-02-21)
 --------------------------
 
