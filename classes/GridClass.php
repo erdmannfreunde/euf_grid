@@ -136,6 +136,7 @@ class GridClass extends Backend {
       $grid .= implode(deserialize($arrGridClasses), ", ");
     }
 
+    // close classes
     $grid .= ")";
 
     if($arrRow['grid_columns'] == "" && $arrRow['grid_options'] == "") {
