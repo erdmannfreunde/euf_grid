@@ -21,9 +21,20 @@ class ContentRowStart extends ContentElement
   {
   	if (TL_MODE == 'BE')
   	{
+      $strCustomClasses = "";
+      if($this->cssID[0]) {
+        $strCustomClasses .= ", ";
+        $strCustomClasses .= "#".$this->cssID[0];
+      }
+
+      if($this->cssID[1]) {
+        $strCustomClasses .= ", ";
+        $strCustomClasses .= str_replace(" ", ", ", $this->cssID[1]);
+      }
+
   		$this->Template = new BackendTemplate('be_wildcard');
   		$this->Template->wildcard = '### E&F GRID: ' . $GLOBALS['TL_LANG']['FFL']['rowStart'][0] . '  ###';
-      $this->Template->wildcard .= '<div class="tl_content_right tl_gray m12">('.$GLOBALS['EUF_GRID_SETTING']['row'].')</div>';
+      $this->Template->wildcard .= '<div class="tl_content_right tl_gray m12">('.$GLOBALS['EUF_GRID_SETTING']['row'].$strCustomClasses.')</div>';
   		return $this->Template->parse();
   	}
 
