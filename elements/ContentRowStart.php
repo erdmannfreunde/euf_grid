@@ -21,11 +21,7 @@ class ContentRowStart extends ContentElement
   {
   	if (TL_MODE == 'BE')
   	{
-      $strCustomClasses = "";
-      if($this->cssID[0]) {
-        $strCustomClasses .= ", ";
-        $strCustomClasses .= "#".$this->cssID[0];
-      }
+      $strCustomClasses = "";      
 
       if($this->cssID[1]) {
         $strCustomClasses .= ", ";

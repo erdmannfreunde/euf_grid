@@ -136,24 +136,6 @@ class GridClass extends Backend {
       $grid .= implode(deserialize($arrGridClasses), ", ");
     }
 
-    // add cssID values
-    $arrCSSid = deserialize($arrRow['cssID']);
-    if($arrCSSid[0] != "") {
-      $grid .= ", ";
-      $grid .= "#".$arrCSSid[0];
-    }
-
-    if($arrCSSid[1] != "") {
-      $grid .= ", ";
-      $grid .= str_replace(" ", ", ", $arrCSSid[1]);
-    }
-
-    // add formfield classes
-    if($arrRow['class'] != "" ) {
-      $grid .= ", ";
-      $grid .= str_replace(" ", ", ", $arrRow['class']);
-    }
-
     // close classes
     $grid .= ")";
 
