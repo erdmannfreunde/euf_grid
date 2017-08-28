@@ -151,12 +151,11 @@ class GridHooks extends \Controller {
 
   }
 
-  public function addCSSFileAsFramework($strName)
+  // Add css file to fronend css
+  public function addCSSToFrondend($objPage, $objLayout, $objPty)
   {
-    if ($strName == 'tl_layout')
-    {
-      // CSS Datei zu den Optionen hinzufügen
-      array_push($GLOBALS['TL_DCA']['tl_layout']['fields']['framework']['options'], '../../../system/modules/euf_grid/assets/euf_grid.css');
+    if($objLayout->addEuFGridCss) {
+      $GLOBALS['TL_FRAMEWORK_CSS'][] = 'system/modules/euf_grid/assets/euf_grid.css';
     }
   }
 

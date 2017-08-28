@@ -7,8 +7,5 @@
  * @copyright Erdmann & Freunde
  */
 
-
-/**
- * CSS Framework Name
- */
-$GLOBALS['TL_LANG']['tl_layout']['../../../system/modules/euf_grid/assets/euf_grid.css'] = 'EuF-Grid';
+// Fields
+$GLOBALS['TL_LANG']['tl_layout']['addEuFGridCss'] = array('Load EuF-grid CSS', 'Add EuF-grid CSS to this layout.');
