@@ -1,6 +1,14 @@
 euf_grid Changelog
 ==================
 
+Version 2.2.0 (2017-09-04)
+--------------------------
+
+### New
+- additional class `.row--show` to make the grid visible
+- fallback for elements that don't have a col-class yet (e.g. `.col-xs-12`)
+
+
 Version 2.1.0 (2017-08-29)
 --------------------------
 This version removes the old way to load the grid css and replaces it by adding a new field to the layout in style settings. Thereby it provides a better support for contao 4. We suggest removing the 'old' way of including the CSS before updating and readding it afterwards.
@@ -10,7 +18,6 @@ This version removes the old way to load the grid css and replaces it by adding 
 
 ### Removed
 - additional checkbox in CSS-Frameworks
-
 
 
 Version 2.0.3 (2017-05-31)

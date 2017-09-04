@@ -18,6 +18,34 @@
   box-sizing: border-box;
 }
 
+.row--show {
+	position: relative;
+	background: #f9f9f9;
+	z-index: -1;
+  padding-top: 0.9375rem;
+}
+
+.row--show:before {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: -1;
+	left: 0.9375rem;
+	right: 0.9375rem;
+	top: 0;
+	height: 100%;
+	background: repeating-linear-gradient(to right,
+		#f0f0f0 0%, #f0f0f0 calc((100% - (1.875rem * 11)) / 12), 
+		#f9f9f9 calc((100% - (1.875rem * 11)) / 12), #f9f9f9 calc(((100% - (1.875rem * 11)) / 12) + 1.875rem)
+	);
+}
+
+.row > div {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  box-sizing: border-box;
+}
+
 @media screen and (min-width: 0) {
   .col-xs-1 {
     width: 8.33333333%;
