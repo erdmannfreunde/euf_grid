@@ -1,6 +1,13 @@
 euf_grid Changelog
 ==================
 
+Version 2.2.1 (2017-09-22)
+--------------------------
+
+### Fixed
+- fixed an error that caused the whole grid was not visible (behind the article) in some installations
+
+
 Version 2.2.0 (2017-09-04)
 --------------------------
 
