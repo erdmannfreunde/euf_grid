@@ -68,7 +68,7 @@ $GLOBALS['TL_HOOKS']['getPageLayout'][] = array('GridHooks', 'addCSSToFrondend')
  * EuF Grid standard configuration
  */
 $GLOBALS['EUF_GRID_SETTING'] = array (
-  'columns'       => array ('-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12'),
+  'columns'       => array ('','-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12'),
   'viewports'     => array ('','-xs','-sm','-md','-lg','-xl'),
   'devider'       => '-',
 
