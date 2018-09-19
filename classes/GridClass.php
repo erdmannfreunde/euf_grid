@@ -21,7 +21,7 @@ class GridClass extends Backend {
       foreach($GLOBALS['EUF_GRID_SETTING']['cols'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
       		foreach($GLOBALS['EUF_GRID_SETTING']['columns'] as $column) {
-      			$arrColumns[$option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport.$GLOBALS['EUF_GRID_SETTING']['devider'].$column;
+      			$arrColumns[$option.$viewport][] = $option.$viewport.$column;
       		}
       	}
       }
@@ -42,7 +42,7 @@ class GridClass extends Backend {
       foreach($GLOBALS['EUF_GRID_SETTING']['offset'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
       		foreach($GLOBALS['EUF_GRID_SETTING']['offset_cols'] as $column) {
-      			$arrOptions[$option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport.$GLOBALS['EUF_GRID_SETTING']['devider'].$column;
+      			$arrOptions[$option.$viewport][] = $option.$viewport.$column;
       		}
       	}
       }
@@ -52,7 +52,7 @@ class GridClass extends Backend {
     if($GLOBALS['EUF_GRID_SETTING']['pulls']) {
       foreach($GLOBALS['EUF_GRID_SETTING']['pulls'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
-      			$arrOptions[$option][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport;
+      			$arrOptions[$option][] = $option.$viewport;
       	}
       }
     }
@@ -61,7 +61,7 @@ class GridClass extends Backend {
     if($GLOBALS['EUF_GRID_SETTING']['resets']) {
       foreach($GLOBALS['EUF_GRID_SETTING']['resets'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
-      			$arrOptions[$option][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport;
+      			$arrOptions[$option][] = $option.$viewport;
       	}
       }
     }
