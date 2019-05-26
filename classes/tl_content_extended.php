@@ -39,7 +39,7 @@ class tl_content_extended extends tl_content
             $data = $dc->activeRecord->row();
             unset($data['id']);
             $data['type']    = str_replace('Start', 'End', $dc->activeRecord->type);
-            $data['sorting'] += 32;
+            $data['sorting'] += 1;
 
             $newElement = new \Contao\ContentModel();
             $newElement->setRow($data);
@@ -47,9 +47,9 @@ class tl_content_extended extends tl_content
         }
     }
 
-    public function siblingStopElmentIsMissing($pid, $ptable, $sorting, $rowOrCol)
+    private function siblingStopElmentIsMissing($pid, $ptable, $sorting, $rowOrCol)
     {
-        if (!in_array($rowOrCol, array('row', 'col'))) {
+            if (!in_array($rowOrCol, array('row', 'col'))) {
             throw new InvalidArgumentException('Argument $rowOrCol must be either "row" or "col"');
         }
         $statement = \Contao\Database::getInstance()
