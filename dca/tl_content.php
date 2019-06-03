@@ -13,6 +13,8 @@
  */
  $GLOBALS['TL_DCA']['tl_content']['list']['sorting']['child_record_callback'] = array('tl_content_extended', 'addCteType');
 
+$GLOBALS['TL_DCA']['tl_content']['config']['onsubmit_callback'][] = array('tl_content_extended', 'onsubmitCallback');
+
 
 /*
  * Palettes
