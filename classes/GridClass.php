@@ -42,7 +42,7 @@ class GridClass extends Backend {
       foreach($GLOBALS['EUF_GRID_SETTING']['col-start'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
       		foreach($GLOBALS['EUF_GRID_SETTING']['start_cols'] as $column) {
-      			$arrOptions[$option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport.$GLOBALS['EUF_GRID_SETTING']['devider'].$column;
+      			$arrOptions[$option.$viewport][] = $option.$viewport.$column;
       		}
       	}
       }
@@ -53,7 +53,7 @@ class GridClass extends Backend {
       foreach($GLOBALS['EUF_GRID_SETTING']['row-start'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
       		foreach($GLOBALS['EUF_GRID_SETTING']['start_cols'] as $column) {
-      			$arrOptions[$option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport.$GLOBALS['EUF_GRID_SETTING']['devider'].$column;
+      			$arrOptions[$option.$viewport][] = $option.$viewport.$column;
       		}
       	}
       }
