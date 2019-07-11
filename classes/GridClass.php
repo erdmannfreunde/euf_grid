@@ -36,6 +36,28 @@ class GridClass extends Backend {
   public function getGridOptions() {
 
     $arrOptions = array();
+    
+    // Col-Start (used for Grid-Layout)
+    if($GLOBALS['EUF_GRID_SETTING']['col-start']) {
+      foreach($GLOBALS['EUF_GRID_SETTING']['col-start'] as $option) {
+      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
+      		foreach($GLOBALS['EUF_GRID_SETTING']['start_cols'] as $column) {
+      			$arrOptions[$option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport.$GLOBALS['EUF_GRID_SETTING']['devider'].$column;
+      		}
+      	}
+      }
+    }
+    
+    // Row-Start (used for Grid-Layout)
+    if($GLOBALS['EUF_GRID_SETTING']['row-start']) {
+      foreach($GLOBALS['EUF_GRID_SETTING']['row-start'] as $option) {
+      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
+      		foreach($GLOBALS['EUF_GRID_SETTING']['start_cols'] as $column) {
+      			$arrOptions[$option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport][] = $option.$GLOBALS['EUF_GRID_SETTING']['devider'].$viewport.$GLOBALS['EUF_GRID_SETTING']['devider'].$column;
+      		}
+      	}
+      }
+    }
 
     // Offset
     if($GLOBALS['EUF_GRID_SETTING']['offset']) {

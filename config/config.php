@@ -77,6 +77,9 @@ $GLOBALS['EUF_GRID_SETTING'] = array (
   'offset'        => array ('offset'),
   'offset_cols'   => array ('-0','-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11'),
   'pulls'         => array ('pull-left', 'pull-right'),
+  'col-start'     => array ('col-start'),
+  'row-start'     => array ('row-start'),
+  'start_cols'   => array ('1','2','3','4','5','6','7','8','9','10','11', '12'),
   'resets'        => array ('clear'),
   'options'       => array ('') // additional custom classes
 );
