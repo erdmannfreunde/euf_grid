@@ -9,8 +9,8 @@
 
 // Palettes
 $GLOBALS['TL_DCA']['tl_layout']['palettes']['default'] = str_replace (
-  ';{picturefill_legend',
-  ',addEuFGridCss;{picturefill_legend',
+  ',combineScripts',
+  ',combineScripts,addEuFGridCss',
   $GLOBALS['TL_DCA']['tl_layout']['palettes']['default']
 );
 
