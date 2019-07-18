@@ -58,6 +58,17 @@ class GridClass extends Backend {
       	}
       }
     }
+    
+    // Positioning Content via align and justify (used for Grid-Layout)
+    if($GLOBALS['EUF_GRID_SETTING']['positioning']) {
+      foreach($GLOBALS['EUF_GRID_SETTING']['positioning'] as $option) {
+      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
+        	foreach($GLOBALS['EUF_GRID_SETTING']['directions'] as $directions) {
+      		  $arrOptions[$option.$viewport][] = $option.$viewport.$directions;
+      		}
+      	}
+      }
+    }
 
     // Offset
     if($GLOBALS['EUF_GRID_SETTING']['offset']) {
