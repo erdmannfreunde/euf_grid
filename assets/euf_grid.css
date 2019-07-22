@@ -21,8 +21,8 @@ html {
   display: block;
   position: absolute;
   z-index: -1;
-  left: 0.9375rem;
-  right: 0.9375rem;
+  left: 0;
+  right: 0;
   top: 0;
   height: 100%;
   background: repeating-linear-gradient(to right, #f0f0f0 0%, #f0f0f0 calc((100% - (1.875rem * 11)) / 12), #f9f9f9 calc((100% - (1.875rem * 11)) / 12), #f9f9f9 calc(((100% - (1.875rem * 11)) / 12) + 1.875rem) );
