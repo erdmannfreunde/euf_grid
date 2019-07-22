@@ -43,11 +43,11 @@ html {
 }
 
 .justify-end {
-  align-self: end;
+  justify-self: end;
 }
 
 .justify-stretch {
-  align-self: stretch;
+  justify-self: stretch;
 }
 
 .align-start {
