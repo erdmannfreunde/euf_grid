@@ -200,11 +200,11 @@ html {
   }
   
   .justify-xs-end {
-    align-self: end;
+    justify-self: end;
   }
   
   .justify-xs-stretch {
-    align-self: stretch;
+    justify-self: stretch;
   }
   
   .align-xs-start {
@@ -358,11 +358,11 @@ html {
   }
   
   .justify-sm-end {
-    align-self: end;
+    justify-self: end;
   }
   
   .justify-sm-stretch {
-    align-self: stretch;
+    justify-self: stretch;
   }
   
   .align-sm-start {
@@ -516,11 +516,11 @@ html {
   }
   
   .justify-md-end {
-    align-self: end;
+    justify-self: end;
   }
   
   .justify-md-stretch {
-    align-self: stretch;
+    justify-self: stretch;
   }
   
   .align-md-start {
@@ -674,11 +674,11 @@ html {
   }
   
   .justify-lg-end {
-    align-self: end;
+    justify-self: end;
   }
   
   .justify-lg-stretch {
-    align-self: stretch;
+    justify-self: stretch;
   }
   
   .align-lg-start {
@@ -832,11 +832,11 @@ html {
   }
   
   .justify-xl-end {
-    align-self: end;
+    justify-self: end;
   }
   
   .justify-xl-stretch {
-    align-self: stretch;
+    justify-self: stretch;
   }
   
   .align-xl-start {
