@@ -36,6 +36,39 @@ class GridClass extends Backend {
   public function getGridOptions() {
 
     $arrOptions = array();
+    
+    // Col-Start (used for Grid-Layout)
+    if($GLOBALS['EUF_GRID_SETTING']['col-start']) {
+      foreach($GLOBALS['EUF_GRID_SETTING']['col-start'] as $option) {
+      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
+      		foreach($GLOBALS['EUF_GRID_SETTING']['start_cols'] as $column) {
+      			$arrOptions[$option.$viewport][] = $option.$viewport.$column;
+      		}
+      	}
+      }
+    }
+    
+    // Row-Start (used for Grid-Layout)
+    if($GLOBALS['EUF_GRID_SETTING']['row-start']) {
+      foreach($GLOBALS['EUF_GRID_SETTING']['row-start'] as $option) {
+      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
+      		foreach($GLOBALS['EUF_GRID_SETTING']['start_cols'] as $column) {
+      			$arrOptions[$option.$viewport][] = $option.$viewport.$column;
+      		}
+      	}
+      }
+    }
+    
+    // Positioning Content via align and justify (used for Grid-Layout)
+    if($GLOBALS['EUF_GRID_SETTING']['positioning']) {
+      foreach($GLOBALS['EUF_GRID_SETTING']['positioning'] as $option) {
+      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
+        	foreach($GLOBALS['EUF_GRID_SETTING']['directions'] as $directions) {
+      		  $arrOptions[$option.$viewport][] = $option.$viewport.$directions;
+      		}
+      	}
+      }
+    }
 
     // Offset
     if($GLOBALS['EUF_GRID_SETTING']['offset']) {

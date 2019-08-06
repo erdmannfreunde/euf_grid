@@ -4,7 +4,7 @@
   "keywords": ["contao", "grid", "bootstrap", "euf grid"],
   "type": "contao-module",
   "homepage": "https://github.com/ErdmannFreunde/euf_grid",
-  "license": "GPL-3.0+",
+  "license": "GPL-3.0-or-later",
 	"authors":[
 		{
 			"name":"Erdmann & Freunde // Sebastian Buck",
@@ -30,6 +30,9 @@
       "sources": {
         "": "system/modules/euf_grid"
       }
+    },
+    "branch-alias": {
+        "dev-feature/css_grid_layout": "3.0.0-dev"
     }
   }
 }
