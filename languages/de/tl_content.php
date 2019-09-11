@@ -17,7 +17,7 @@ $GLOBALS['TL_LANG']['tl_content']['grid_legend'] = 'Grid-Einstellungen';
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_content']['grid_columns'] = array('Grid Columns','Beispiel: col-sm-5');
-$GLOBALS['TL_LANG']['tl_content']['grid_options'] = array('Grid Optionen','Beispiel: offset-sm-1, pull-left-md-2');
+$GLOBALS['TL_LANG']['tl_content']['grid_options'] = array('Grid Optionen','Beispiel: col-start-2, align-center, justify-md-end');
 
 /**
  * Options
