@@ -73,7 +73,7 @@ $GLOBALS['EUF_GRID_SETTING'] = array (
   'devider'       => '-',
 
   'row'           => 'row',
-  'cols'          => array ('col'),
+  'cols'          => array ('col', 'row-span'),
   'offset'        => array ('offset'),
   'offset_cols'   => array ('-0','-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11'),
   'pulls'         => array ('pull-left', 'pull-right'),
