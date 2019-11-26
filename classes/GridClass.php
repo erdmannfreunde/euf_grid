@@ -70,29 +70,9 @@ class GridClass extends Backend {
       }
     }
 
-    // Offset
-    if($GLOBALS['EUF_GRID_SETTING']['offset']) {
-      foreach($GLOBALS['EUF_GRID_SETTING']['offset'] as $option) {
-      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
-      		foreach($GLOBALS['EUF_GRID_SETTING']['offset_cols'] as $column) {
-      			$arrOptions[$option.$viewport][] = $option.$viewport.$column;
-      		}
-      	}
-      }
-    }
-
     // Pulls
     if($GLOBALS['EUF_GRID_SETTING']['pulls']) {
       foreach($GLOBALS['EUF_GRID_SETTING']['pulls'] as $option) {
-      	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
-      			$arrOptions[$option][] = $option.$viewport;
-      	}
-      }
-    }
-
-    // Resets
-    if($GLOBALS['EUF_GRID_SETTING']['resets']) {
-      foreach($GLOBALS['EUF_GRID_SETTING']['resets'] as $option) {
       	foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
       			$arrOptions[$option][] = $option.$viewport;
       	}
