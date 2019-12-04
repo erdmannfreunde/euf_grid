@@ -1,38 +1,47 @@
 {
   "name": "erdmannfreunde/euf_grid",
   "description": "Contao Extension to create grid-layouts",
-  "keywords": ["contao", "grid", "bootstrap", "euf grid"],
-  "type": "contao-module",
+  "keywords": [
+    "contao",
+    "grid",
+    "bootstrap",
+    "euf grid"
+  ],
+  "type": "contao-bundle",
   "homepage": "https://github.com/ErdmannFreunde/euf_grid",
-  "license": "GPL-3.0-or-later",
-	"authors":[
-		{
-			"name":"Erdmann & Freunde // Sebastian Buck",
-			"homepage":"http://erdmann-freunde.de",
-			"role":"Developer"
-		}
-	],
-	"support":{
-  	"email": "moin@erdmann-freunde.de",
-		"issues":"https://github.com/ErdmannFreunde/euf_grid/issues",
-		"source":"https://github.com/ErdmannFreunde/euf_grid"
-	},
-	"require": {
-    "php": ">=5.3",
-    "contao/core-bundle": "~3.5 || ~4.1",
-    "contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Erdmann & Freunde",
+      "homepage": "https://erdmann-freunde.de",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "moin@erdmann-freunde.de",
+    "issues": "https://github.com/ErdmannFreunde/euf_grid/issues",
+    "source": "https://github.com/ErdmannFreunde/euf_grid"
+  },
+  "require": {
+    "php": "^7.1",
+    "contao/core-bundle": "^4.4",
+    "symfony/config": "^3.3 || ^4.0",
+    "symfony/dependency-injection": "^3.3 || ^4.0",
+    "symfony/http-kernel": "^3.3 || ^4.0"
+  },
+  "require-dev": {
+    "contao/manager-plugin": "^2.7",
+    "friendsofphp/php-cs-fixer": "^2.12"
+  },
+  "autoload": {
+    "psr-4": {
+      "ErdmannFreunde\\ContaoGridBundle\\": "src"
+    }
   },
   "replace": {
-    "contao-legacy/euf_grid": "self.version"
+    "erdmannfreunde/euf_grid": "self.version"
   },
   "extra": {
-    "contao": {
-      "sources": {
-        "": "system/modules/euf_grid"
-      }
-    },
-    "branch-alias": {
-        "dev-feature/css_grid_layout": "3.0.0-dev"
-    }
+    "contao-manager-plugin": "ErdmannFreunde\\ContaoGridBundle\\ContaoManager\\Plugin"
   }
 }
