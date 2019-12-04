@@ -11,9 +11,14 @@ declare(strict_types=1);
  * @link       http://github.com/erdmannfreunde/contao-grid
  */
 
-class ContentRowStart extends ContentElement
+namespace ErdmannFreunde\ContaoGridBundle\ContentElement;
+
+use Contao\BackendTemplate;
+use Contao\ContentElement;
+
+class ContentRowEnd extends ContentElement
 {
-    protected $strTemplate = 'ce_rowStart';
+    protected $strTemplate = 'ce_rowEnd';
 
     public function compile()
     {
@@ -22,16 +27,8 @@ class ContentRowStart extends ContentElement
     public function generate()
     {
         if (TL_MODE === 'BE') {
-            $strCustomClasses = '';
-
-            if ($this->cssID[1]) {
-                $strCustomClasses .= ', ';
-                $strCustomClasses .= str_replace(' ', ', ', $this->cssID[1]);
-            }
-
             $this->Template           = new BackendTemplate('be_wildcard');
-            $this->Template->wildcard = '### E&F GRID: '.$GLOBALS['TL_LANG']['FFL']['rowStart'][0].'  ###';
-            $this->Template->wildcard .= '<div class="tl_content_right tl_gray m12">('.$GLOBALS['EUF_GRID_SETTING']['row'].$strCustomClasses.')</div>';
+            $this->Template->wildcard = '### E&F GRID: Reihe Ende ###';
 
             return $this->Template->parse();
         }

@@ -11,6 +11,10 @@ declare(strict_types=1);
  * @link       http://github.com/erdmannfreunde/contao-grid
  */
 
+namespace ErdmannFreunde\ContaoGridBundle\Form;
+
+use Contao\Widget;
+
 class FormRowEnd extends Widget
 {
     protected $strTemplate = 'form_rowEnd';

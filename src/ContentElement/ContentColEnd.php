@@ -11,9 +11,14 @@ declare(strict_types=1);
  * @link       http://github.com/erdmannfreunde/contao-grid
  */
 
-class ContentRowEnd extends ContentElement
+namespace ErdmannFreunde\ContaoGridBundle\ContentElement;
+
+use Contao\BackendTemplate;
+use Contao\ContentElement;
+
+class ContentColEnd extends ContentElement
 {
-    protected $strTemplate = 'ce_rowEnd';
+    protected $strTemplate = 'ce_colEnd';
 
     public function compile()
     {
@@ -23,7 +28,7 @@ class ContentRowEnd extends ContentElement
     {
         if (TL_MODE === 'BE') {
             $this->Template           = new BackendTemplate('be_wildcard');
-            $this->Template->wildcard = '### E&F GRID: Reihe Ende ###';
+            $this->Template->wildcard = '### E&F GRID: Spalte Ende ###';
 
             return $this->Template->parse();
         }

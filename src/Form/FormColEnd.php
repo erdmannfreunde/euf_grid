@@ -11,9 +11,13 @@ declare(strict_types=1);
  * @link       http://github.com/erdmannfreunde/contao-grid
  */
 
-class FormColStart extends Widget
+namespace ErdmannFreunde\ContaoGridBundle\Form;
+
+use Contao\Widget;
+
+class FormColEnd extends Widget
 {
-    protected $strTemplate = 'form_colStart';
+    protected $strTemplate = 'form_colEnd';
 
     public function validate()
     {
@@ -26,7 +30,7 @@ class FormColStart extends Widget
             /** @var \BackendTemplate|object $objTemplate */
             $objTemplate = new \BackendTemplate('be_wildcard');
 
-            $objTemplate->wildcard = '### '.$GLOBALS['TL_LANG']['FFL']['colStart'][0].' ###';
+            $objTemplate->wildcard = '### '.$GLOBALS['TL_LANG']['FFL']['colEnd'][0].' ###';
 
             return $objTemplate->parse();
         }

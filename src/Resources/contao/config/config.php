@@ -11,6 +11,10 @@ declare(strict_types=1);
  * @link       http://github.com/erdmannfreunde/contao-grid
  */
 
+use ErdmannFreunde\ContaoGridBundle\EventListener\AddGridClassesToContentListener;
+use ErdmannFreunde\ContaoGridBundle\EventListener\AddGridClassesToFormListener;
+use ErdmannFreunde\ContaoGridBundle\EventListener\IncludeCssListener;
+
 $GLOBALS['TL_CTE']['euf_grid'] = [
     'rowStart'  => 'ContentRowStart',
     'rowEnd'    => 'ContentRowEnd',
@@ -18,19 +22,19 @@ $GLOBALS['TL_CTE']['euf_grid'] = [
     'colEnd'    => 'ContentColEnd',
 ];
 
-$GLOBALS['TL_FFL']['rowStart'] = 'FormRowStart';
-$GLOBALS['TL_FFL']['rowEnd']   = 'FormRowEnd';
-$GLOBALS['TL_FFL']['colStart'] = 'FormColStart';
-$GLOBALS['TL_FFL']['colEnd']   = 'FormColEnd';
+$GLOBALS['TL_FFL']['rowStart'] = \ErdmannFreunde\ContaoGridBundle\Form\FormRowStart::class;
+$GLOBALS['TL_FFL']['rowEnd']   = \ErdmannFreunde\ContaoGridBundle\Form\FormRowEnd::class;
+$GLOBALS['TL_FFL']['colStart'] = \ErdmannFreunde\ContaoGridBundle\Form\FormColStart::class;
+$GLOBALS['TL_FFL']['colEnd']   = \ErdmannFreunde\ContaoGridBundle\Form\FormColEnd::class;
 
 $GLOBALS['TL_WRAPPERS']['start'][] = 'rowStart';
 $GLOBALS['TL_WRAPPERS']['stop'][]  = 'rowEnd';
 $GLOBALS['TL_WRAPPERS']['start'][] = 'colStart';
 $GLOBALS['TL_WRAPPERS']['stop'][]  = 'colEnd';
 
-$GLOBALS['TL_HOOKS']['getContentElement'][] = ['GridHooks', 'addGridClasses'];
-$GLOBALS['TL_HOOKS']['loadFormField'][]     = ['GridHooks', 'addGridClassesToForms'];
-$GLOBALS['TL_HOOKS']['getPageLayout'][]     = ['GridHooks', 'addCSSToFrondend'];
+$GLOBALS['TL_HOOKS']['getContentElement'][] = [AddGridClassesToContentListener::class, 'onGetContentElement'];
+$GLOBALS['TL_HOOKS']['loadFormField'][]     = [AddGridClassesToFormListener::class, 'onLoadFormField'];
+$GLOBALS['TL_HOOKS']['getPageLayout'][]     = [IncludeCssListener::class, 'onGetPageLayout'];
 
 $GLOBALS['EUF_GRID_SETTING'] = [
     'columns'       => ['', '-1', '-2', '-3', '-4', '-5', '-6', '-7', '-8', '-9', '-10', '-11', '-12'],

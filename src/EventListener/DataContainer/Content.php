@@ -11,20 +11,14 @@ declare(strict_types=1);
  * @link       http://github.com/erdmannfreunde/contao-grid
  */
 
-/**
- * Label_Callback anpassen, um Grid-KLassen hinzuzufügen.
- */
-class tl_content_extended extends tl_content
+namespace ErdmannFreunde\ContaoGridBundle\EventListener\DataContainer;
+
+use Contao\ContentModel;
+use Contao\Database;
+use InvalidArgumentException;
+
+final class Content
 {
-    public function addCteType($arrRow)
-    {
-        $return = parent::addCteType($arrRow);
-
-        $return = GridClass::addClassesToLabels($arrRow, $return);
-
-        return $return;
-    }
-
     public function onsubmitCallback(\DataContainer $dc)
     {
         if (!\in_array($dc->activeRecord->type, ['rowStart', 'colStart'], true)) {
@@ -42,7 +36,7 @@ class tl_content_extended extends tl_content
             $data['type']    = str_replace('Start', 'End', $dc->activeRecord->type);
             ++$data['sorting'];
 
-            $newElement = new \Contao\ContentModel();
+            $newElement = new ContentModel();
             $newElement->setRow($data);
             $newElement->save();
         }
@@ -53,7 +47,8 @@ class tl_content_extended extends tl_content
         if (!\in_array($rowOrCol, ['row', 'col'], true)) {
             throw new InvalidArgumentException('Argument $rowOrCol must be either "row" or "col"');
         }
-        $statement = \Contao\Database::getInstance()
+
+        $statement = Database::getInstance()
             ->prepare(
                 'SELECT * FROM tl_content WHERE pid=? AND ptable=? AND sorting>? AND type IN("'.$rowOrCol.'Start", "'
                 .$rowOrCol.'End") ORDER BY sorting'

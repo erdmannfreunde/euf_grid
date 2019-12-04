@@ -11,9 +11,13 @@ declare(strict_types=1);
  * @link       http://github.com/erdmannfreunde/contao-grid
  */
 
-class FormColEnd extends Widget
+namespace ErdmannFreunde\ContaoGridBundle\Form;
+
+use Contao\Widget;
+
+class FormRowStart extends Widget
 {
-    protected $strTemplate = 'form_colEnd';
+    protected $strTemplate = 'form_rowStart';
 
     public function validate()
     {
@@ -23,10 +27,18 @@ class FormColEnd extends Widget
     {
         // Return a wildcard in the back end
         if (TL_MODE === 'BE') {
+            $strCustomClasses = '';
+
+            if ($this->strClass) {
+                $strCustomClasses .= ', ';
+                $strCustomClasses .= str_replace(' ', ', ', $this->strClass);
+            }
+
             /** @var \BackendTemplate|object $objTemplate */
             $objTemplate = new \BackendTemplate('be_wildcard');
 
-            $objTemplate->wildcard = '### '.$GLOBALS['TL_LANG']['FFL']['colEnd'][0].' ###';
+            $objTemplate->wildcard = '### E&F GRID: '.$GLOBALS['TL_LANG']['FFL']['rowStart'][0].'  ###';
+            $objTemplate->wildcard .= '<div class="tl_content_right tl_gray m12">('.$GLOBALS['EUF_GRID_SETTING']['row'].$strCustomClasses.')</div>';
 
             return $objTemplate->parse();
         }

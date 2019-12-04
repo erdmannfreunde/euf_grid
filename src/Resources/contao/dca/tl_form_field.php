@@ -11,21 +11,23 @@ declare(strict_types=1);
  * @link       http://github.com/erdmannfreunde/contao-grid
  */
 
-$GLOBALS['TL_DCA']['tl_form_field']['list']['sorting']['child_record_callback'] = ['tl_form_field_extended', 'listFormFields'];
+use ErdmannFreunde\ContaoGridBundle\EventListener\DataContainer\GridClassesOptionsListener;
+use ErdmannFreunde\ContaoGridBundle\EventListener\DataContainer\GridColsOptionsListener;
 
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['rowStart'] = '{type_legend},type;{expert_legend:hide},class;';
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['rowEnd']   = '{type_legend},type';
-$GLOBALS['TL_DCA']['tl_form_field']['palettes']['colStart'] = '{type_legend},type;{grid_legend},grid_columns,grid_options;{expert_legend:hide},class';
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['colStart'] =
+    '{type_legend},type;{grid_legend},grid_columns,grid_options;{expert_legend:hide},class';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['colEnd']      = '{type_legend},type';
 
 foreach ($GLOBALS['TL_DCA']['tl_form_field']['palettes'] as $k => $palette) {
     if (!\is_array($palette) && false !== strpos($palette, 'customTpl')
-      && (!\in_array($k, ['html', 'fieldsetfsStop', 'rowStart'], true))) {
+        && (!\in_array($k, ['html', 'fieldsetfsStop', 'rowStart'], true))) {
         $GLOBALS['TL_DCA']['tl_form_field']['palettes'][$k] = str_replace(
-      '{template_legend:hide}',
-      '{grid_legend},grid_columns,grid_options;{template_legend:hide}',
-      $GLOBALS['TL_DCA']['tl_form_field']['palettes'][$k]
-    );
+            '{template_legend:hide}',
+            '{grid_legend},grid_columns,grid_options;{template_legend:hide}',
+            $GLOBALS['TL_DCA']['tl_form_field']['palettes'][$k]
+        );
     }
 }
 
@@ -34,13 +36,13 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['grid_columns'] = [
     'exclude'          => true,
     'search'           => true,
     'inputType'        => 'select',
-    'options_callback' => ['GridClass', 'getGridCols'],
+    'options_callback' => [GridColsOptionsListener::class, 'onOptionsCallback'],
     'eval'             => [
-        'mandatory'       => false,
-        'multiple'        => true,
-        'size'            => 10,
-        'tl_class'        => 'w50 w50h autoheight',
-        'chosen'          => true,
+        'mandatory' => false,
+        'multiple'  => true,
+        'size'      => 10,
+        'tl_class'  => 'w50 w50h autoheight',
+        'chosen'    => true,
     ],
     'sql'              => 'text NULL',
 ];
@@ -50,13 +52,13 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['grid_options'] = [
     'exclude'          => true,
     'search'           => true,
     'inputType'        => 'select',
-    'options_callback' => ['GridClass', 'getGridOptions'],
+    'options_callback' => [GridClassesOptionsListener::class, 'onOptionsCallback'],
     'eval'             => [
-        'mandatory'       => false,
-        'multiple'        => true,
-        'size'            => 10,
-        'tl_class'        => 'w50 w50h autoheight',
-        'chosen'          => true,
+        'mandatory' => false,
+        'multiple'  => true,
+        'size'      => 10,
+        'tl_class'  => 'w50 w50h autoheight',
+        'chosen'    => true,
     ],
     'sql'              => 'text NULL',
 ];
