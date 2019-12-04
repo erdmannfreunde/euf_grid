@@ -16,10 +16,10 @@ use ErdmannFreunde\ContaoGridBundle\EventListener\AddGridClassesToFormListener;
 use ErdmannFreunde\ContaoGridBundle\EventListener\IncludeCssListener;
 
 $GLOBALS['TL_CTE']['euf_grid'] = [
-    'rowStart'  => 'ContentRowStart',
-    'rowEnd'    => 'ContentRowEnd',
-    'colStart'  => 'ContentColStart',
-    'colEnd'    => 'ContentColEnd',
+    'rowStart'  => \ErdmannFreunde\ContaoGridBundle\ContentElement\ContentRowStart::class,
+    'rowEnd'    => \ErdmannFreunde\ContaoGridBundle\ContentElement\ContentRowEnd::class,
+    'colStart'  => \ErdmannFreunde\ContaoGridBundle\ContentElement\ContentColStart::class,
+    'colEnd'    => \ErdmannFreunde\ContaoGridBundle\ContentElement\ContentColEnd::class,
 ];
 
 $GLOBALS['TL_FFL']['rowStart'] = \ErdmannFreunde\ContaoGridBundle\Form\FormRowStart::class;

@@ -26,8 +26,8 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['colEnd']   = '{type_legend},type';
 foreach ($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $palette) {
     if (!\is_array($palette) && false !== strpos($palette, 'cssID')) {
         $GLOBALS['TL_DCA']['tl_content']['palettes'][$k] = str_replace(
-            '{invisible_legend:hide}',
-            '{grid_legend},grid_columns,grid_options;{invisible_legend:hide}',
+            '{invisible_legend',
+            '{grid_legend},grid_columns,grid_options;{invisible_legend',
             $GLOBALS['TL_DCA']['tl_content']['palettes'][$k]
         );
     }
