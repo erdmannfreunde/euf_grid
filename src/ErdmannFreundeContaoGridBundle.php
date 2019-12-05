@@ -13,8 +13,13 @@ declare(strict_types=1);
 
 namespace ErdmannFreunde\ContaoGridBundle;
 
+use ErdmannFreunde\ContaoGridBundle\DependencyInjection\ErdmannFreundeContaoGridExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 final class ErdmannFreundeContaoGridBundle extends Bundle
 {
+    public function getContainerExtension(): ErdmannFreundeContaoGridExtension
+    {
+        return new ErdmannFreundeContaoGridExtension();
+    }
 }

@@ -1,0 +1,8 @@
+services:
+  ErdmannFreunde\ContaoGridBundle\GridClasses: ~
+
+  ErdmannFreunde\ContaoGridBundle\EventListener\DataContainer\GridClassesOptionsListener:
+    arguments: ['@ErdmannFreunde\ContaoGridBundle\GridClasses']
+
+  ErdmannFreunde\ContaoGridBundle\EventListener\DataContainer\GridColsOptionsListener:
+    arguments: ['@ErdmannFreunde\ContaoGridBundle\GridClasses']

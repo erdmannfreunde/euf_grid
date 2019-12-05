@@ -13,22 +13,19 @@ declare(strict_types=1);
 
 namespace ErdmannFreunde\ContaoGridBundle\EventListener\DataContainer;
 
+use ErdmannFreunde\ContaoGridBundle\GridClasses;
+
 final class GridColsOptionsListener
 {
-    public function onOptionsCallback()
+    private $gridClasses;
+
+    public function __construct(GridClasses $gridClasses)
     {
-        $columns = [];
+        $this->gridClasses = $gridClasses;
+    }
 
-        if ($GLOBALS['EUF_GRID_SETTING']['cols']) {
-            foreach ($GLOBALS['EUF_GRID_SETTING']['cols'] as $option) {
-                foreach ($GLOBALS['EUF_GRID_SETTING']['viewports'] as $viewport) {
-                    foreach ($GLOBALS['EUF_GRID_SETTING']['columns'] as $column) {
-                        $columns[$option.$viewport][] = $option.$viewport.$column;
-                    }
-                }
-            }
-        }
-
-        return $columns;
+    public function onOptionsCallback(): array
+    {
+        return $this->gridClasses->getGridColumnOptions();
     }
 }
