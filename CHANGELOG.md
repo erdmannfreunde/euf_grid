@@ -1,6 +1,55 @@
 euf_grid Changelog
 ==================
 
+Version 3.1.0 (2020-01-07)
+--------------------------
+### New
+- add row-span classes for vertical grid layouts
+
+
+Version 3.0.4 (2019-09-11)
+--------------------------
+### New
+- end of contao 3.5 support
+ 
+
+Version 3.0.3 (2019-09-06)
+--------------------------
+### Fixed
+- move start-classes to the end, as they should override col-[viewport]-[width] classes
+
+
+Version 3.0.2 (2019-08-19)
+--------------------------
+### New 
+- add classes col-1 --> col-12 to css-file
+
+
+Version 3.0.1 (2019-08-16)
+--------------------------
+### Fixed
+- add update notes to README.md
+
+
+Version 3.0.0 (2019-08-06)
+--------------------------
+### New
+- switch to CSS3 Grid-Layout
+
+
+Version 2.2.3 (2017-09-22)
+--------------------------
+### Fixed
+- Restore compatibility for Contao 4.8
+
+
+Version 2.2.2 (2017-06-03)
+--------------------------
+### New
+- Allow classes like col, col-2 and col-xs
+- Automatically create end elements.
+
+
 Version 2.2.1 (2017-09-22)
 --------------------------
 
