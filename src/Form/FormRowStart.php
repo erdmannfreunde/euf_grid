@@ -13,7 +13,9 @@ declare(strict_types=1);
 
 namespace ErdmannFreunde\ContaoGridBundle\Form;
 
+use Contao\System;
 use Contao\Widget;
+use ErdmannFreunde\ContaoGridBundle\GridClasses;
 
 class FormRowStart extends Widget
 {
@@ -25,6 +27,10 @@ class FormRowStart extends Widget
 
     public function parse($arrAttributes=null)
     {
+        $rowClass = System::getContainer()->get(GridClasses::class)->getRowClass();
+
+        $this->Template->rowClass = $rowClass;
+
         // Return a wildcard in the back end
         if (TL_MODE === 'BE') {
             $strCustomClasses = '';
@@ -38,7 +44,7 @@ class FormRowStart extends Widget
             $objTemplate = new \BackendTemplate('be_wildcard');
 
             $objTemplate->wildcard = '### E&F GRID: '.$GLOBALS['TL_LANG']['FFL']['rowStart'][0].'  ###';
-            $objTemplate->wildcard .= '<div class="tl_content_right tl_gray m12">('.$GLOBALS['EUF_GRID_SETTING']['row'].$strCustomClasses.')</div>';
+            $objTemplate->wildcard .= '<div class="tl_content_right tl_gray m12">('.$rowClass.$strCustomClasses.')</div>';
 
             return $objTemplate->parse();
         }

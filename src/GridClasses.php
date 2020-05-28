@@ -15,6 +15,9 @@ namespace ErdmannFreunde\ContaoGridBundle;
 
 final class GridClasses
 {
+    /** @var string */
+    private $rowClass;
+
     /** @var int[] */
     private $columns;
 
@@ -45,19 +48,8 @@ final class GridClasses
     /** @var int[] */
     private $options_columns;
 
-    /**
-     * GridClasses constructor.
-     *
-     * @param int[]    $columns
-     * @param string[] $viewports
-     * @param string[] $column_prefixes
-     * @param string[] $options_prefixes
-     * @param string[] $pulls
-     * @param string[] $positioning
-     * @param string[] $directions
-     * @param int[]    $options_columns
-     */
     public function __construct(
+        string $rowClass,
         array $columns,
         bool $columns_no_column,
         array $viewports,
@@ -69,6 +61,7 @@ final class GridClasses
         ?array $directions,
         array $options_columns
     ) {
+        $this->rowClass = $rowClass;
         $this->columns               = $columns;
         $this->columns_no_column     = $columns_no_column;
         $this->viewports             = $viewports;
@@ -79,6 +72,11 @@ final class GridClasses
         $this->positioning           = $positioning;
         $this->directions            = $directions;
         $this->options_columns       = $options_columns;
+    }
+
+    public function getRowClass(): string
+    {
+        return $this->rowClass;
     }
 
     public function getColumns(): array

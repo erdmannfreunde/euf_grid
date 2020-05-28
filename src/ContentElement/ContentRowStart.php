@@ -15,6 +15,8 @@ namespace ErdmannFreunde\ContaoGridBundle\ContentElement;
 
 use Contao\BackendTemplate;
 use Contao\ContentElement;
+use Contao\System;
+use ErdmannFreunde\ContaoGridBundle\GridClasses;
 
 class ContentRowStart extends ContentElement
 {
@@ -22,6 +24,10 @@ class ContentRowStart extends ContentElement
 
     public function compile()
     {
+        $rowClass = System::getContainer()->get(GridClasses::class)->getRowClass();
+
+        $this->Template->rowClass = $rowClass;
+
         if (TL_MODE === 'BE') {
             $strCustomClasses = '';
 

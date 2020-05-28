@@ -14,6 +14,7 @@ Das ist die Standardkonfiguration. Du kannst diese (auch nur einzelne Zweige) ü
 
 ```yml
 erdmannfreunde_contao_grid:
+  row_class: row
   columns:
     - 1
     - 2
