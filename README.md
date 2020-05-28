@@ -1,6 +1,6 @@
 # Erdmann & Freunde Grid-Erweiterung für Contao
 
-Mit **euf_grid** kannst du Content-Elemente in Contao an einem 12-spaltigen Grid ausrichten.
+Mit dem Bundle kannst du Content-Elemente in Contao an einem 12-spaltigen Grid ausrichten.
 
 Wir empfehlen dir, die Erweiterung in Verbindung mit unserem Contao Theme SOLO zu verwenden. Mehr Infos: http://erdmann-freunde.de/themes/solo/
 

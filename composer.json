@@ -1,5 +1,5 @@
 {
-  "name": "erdmannfreunde/euf_grid",
+  "name": "erdmannfreunde/contao-grid-bundle",
   "description": "Contao Extension to create grid-layouts",
   "keywords": [
     "contao",
@@ -8,7 +8,7 @@
     "euf grid"
   ],
   "type": "contao-bundle",
-  "homepage": "https://github.com/ErdmannFreunde/euf_grid",
+  "homepage": "https://github.com/ErdmannFreunde/contao-grid-bundle",
   "license": "MIT",
   "authors": [
     {
@@ -19,8 +19,8 @@
   ],
   "support": {
     "email": "moin@erdmann-freunde.de",
-    "issues": "https://github.com/ErdmannFreunde/euf_grid/issues",
-    "source": "https://github.com/ErdmannFreunde/euf_grid"
+    "issues": "https://github.com/ErdmannFreunde/contao-grid-bundle/issues",
+    "source": "https://github.com/ErdmannFreunde/contao-grid-bundle"
   },
   "require": {
     "php": "^7.1",
@@ -39,7 +39,7 @@
     }
   },
   "replace": {
-    "erdmannfreunde/euf_grid": "self.version"
+    "erdmannfreunde/contao-grid-bundle": "self.version"
   },
   "extra": {
     "contao-manager-plugin": "ErdmannFreunde\\ContaoGridBundle\\ContaoManager\\Plugin"
