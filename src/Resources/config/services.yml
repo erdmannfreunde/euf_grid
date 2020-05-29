@@ -1,5 +1,6 @@
 services:
-  ErdmannFreunde\ContaoGridBundle\GridClasses: ~
+  ErdmannFreunde\ContaoGridBundle\GridClasses:
+    public: true
 
   ErdmannFreunde\ContaoGridBundle\EventListener\AddGridClassesToContentListener:
     arguments: ['@request_stack', '@contao.routing.scope_matcher']
