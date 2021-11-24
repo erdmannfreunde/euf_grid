@@ -118,7 +118,7 @@ class GridClass extends Backend {
         }
       }
 
-      $grid .= implode(deserialize($arrGridClasses), ", ");
+      $grid .= implode(", ", deserialize($arrGridClasses));
 
       if($arrRow['grid_options'] != "" ) {
         $grid .= ", ";
@@ -146,7 +146,7 @@ class GridClass extends Backend {
         }
       }
 
-      $grid .= implode(deserialize($arrGridClasses), ", ");
+      $grid .= implode(", ", deserialize($arrGridClasses));
     }
 
     // close classes
