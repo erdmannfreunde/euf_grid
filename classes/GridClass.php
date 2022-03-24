@@ -145,8 +145,6 @@ class GridClass extends Backend {
 
     // Klasse hinzufügen, wenn $grid gesetzt
     if($grid!=="") {
-      $type .= " <span class='tl_gray'>".$grid."</span>";
-
       $return .= '<div class="tl_gray tl_content_right">'.$grid.'</div>';
     }
 
