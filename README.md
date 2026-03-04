@@ -18,6 +18,6 @@ Nach der Installation werden den Content-Elementen 2 neue Felder für die Eingab
 Dieses Paket wird nicht mehr aktiv weiterentwickelt und ist als archiviert markiert.
 Bitte verwendet stattdessen das Ersatzpaket:
 
-- https://github.com/nutshell-framework/assets
+- https://packagist.org/packages/erdmannfreunde/contao-grid-bundle
 
 Für neue Projekte und Updates (u. a. Richtung Contao 5) sollte ausschließlich das Ersatzpaket eingesetzt werden.
