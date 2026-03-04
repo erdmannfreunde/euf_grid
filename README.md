@@ -1,5 +1,14 @@
 # Erdmann & Freunde Grid-Erweiterung für Contao
 
+## Hinweis (archiviert/abgelöst)
+
+Dieses Paket wird nicht mehr aktiv weiterentwickelt und ist als archiviert markiert.
+Bitte verwendet stattdessen das Ersatzpaket:
+
+- https://github.com/erdmannfreunde/contao-grid-bundle
+
+Für neue Projekte und Updates (u. a. Richtung Contao 5) sollte ausschließlich das Ersatzpaket eingesetzt werden.
+
 Mit **euf_grid** kannst du Content-Elemente in Contao an einem 12-spaltigen Grid ausrichten.
 
 Wir empfehlen dir, die Erweiterung in Verbindung mit unserem Contao Theme SOLO zu verwenden. Mehr Infos: http://erdmann-freunde.de/themes/solo/
